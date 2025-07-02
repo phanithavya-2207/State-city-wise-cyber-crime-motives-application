@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <style>
+    body {
+        background-image:url("../assets/resources.avif");
+     background-repeat:no-repeat;
+     background-attachment: fixed;
+     background-size: cover;
+     
+}
+::-webkit-scrollbar{
+            display:none;
+        }
+
+</style>
+<script>
+    function mydetail()
+{
+    var a=document.form.userloginid.value;
+    var b=document.form.username.value;
+    var d=document.form.usertype.value
+    if(b.length===0 ||a.length===0 ||d.length===0)
+    {
+        alert("All fields must be filled");
+    }
+    if(d!='O' && d!='P')
+    {
+        document.getElementById("funame").textContent="The UserType should be public(P) or Official member(O)";
+        event.preventDefault();
+    }
+var c=document.form.password.value;
+if(c<3 && (!/[a-z]/.test(c)||!/[0-9]/.test(c)))
+{
+    document.getElementById("passw").textContent="Please check your password";
+    event.preventDefault();
+}
+}
+</script>
+<body>
+    <br><br><br><br><br><br><br><br>
+    <b><h1 style="color:white;margin-left:250px;font-size: xx-large;"> Create an account</h1></b><br>
+
+    <form method="post" action="login.html"name="form" onsubmit="mydetail()" method="post" style="color:white;margin-left:200px;font-size: xx-large;border: 1px white;" >
+        <lable for="userloginid" style="font-size:x-large;">User ID:  </lable>&nbsp&nbsp&nbsp&nbsp
+        <input type="text" name="userloginid" style="border-radius: 10px;padding: 3px;font-size:medium;"><br>
+        <lable for="username"style="font-size:x-large;">User name:  </lable>&nbsp
+        <input type="text" name="username" style="border-radius: 10px;padding: 3px;font-size:medium;"><br> 
+        <lable for="mail" style="font-size:x-large;">Email:  </lable>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+          <input type="email" name="mail" style="border-radius: 10px;padding: 3px;font-size:medium;"><br>
+       <lable for="usertype"style="font-size:x-large;">User Type:  </lable>&nbsp
+        <input type="text" name="usertype" style="border-radius: 10px;padding: 3px;font-size:medium;"><br>
+        <div style="color:red;font-size: small;" id="funame"></div>
+
+<lable for="password" style="font-size:x-large;">Password: </lable>&nbsp&nbsp
+<input type="password" name="password" style="border-radius: 10px;padding: 3px;font-size:medium;"><br>
+<div id="passw" style="color:red;font-size: small"></div>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button style="color: black;border-radius: 10px;padding: 3px;font-size:medium;padding: 5px;">Submit</button>
+    </form>
+</body>
+</html>

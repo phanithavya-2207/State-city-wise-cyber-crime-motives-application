@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <style>
+    body {
+        background-image:url("../assets/resources.avif");
+     background-repeat:no-repeat;
+     background-attachment: fixed;
+     background-size: cover;
+     
+}
+::-webkit-scrollbar{
+            display:none;
+        }
+
+</style>
+<script>
+    function mydetail()
+{
+    var a=document.form.userloginid.value;
+    if(a.length===0)
+    {
+        alert("All fields must be filled");
+    }
+var c=document.form.password.value;
+if(c<3 || !/[a-z]/.test(c)||!/[0-9]/.test(c))
+{
+    document.getElementById("passw").textContent="Please check your password";
+    event.preventDefault();
+}
+}
+</script>
+<body>
+    <br><br><br><br><br><br><br><br><br><br>
+    <b><h1 style="color:white;margin-left:225px;font-size: xx-large;"> Login to your account</h1></b><br>
+
+    <form method="post" action="home.html"name="form" onsubmit="mydetail()" method="post" style="color:white;margin-left:200px;font-size: xx-large;border:1px white" >
+        <lable for="userloginid" style="font-size:x-large;">User ID:  </lable>&nbsp&nbsp&nbsp&nbsp
+        <input type="text" name="userloginid" style="border-radius: 10px;padding: 3px;font-size:medium;"><br>
+        <lable for="password" style="font-size:x-large;">Password: </lable>&nbsp&nbsp
+<input type="password" name="password" style="border-radius: 10px;padding: 3px;font-size:medium;"><br>
+<div id="passw" style="color:red;font-size: small"></div>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button style="color: black;border-radius: 10px;padding: 3px;font-size:medium;padding: 5px;">Submit</button>
+    </form>
+    <BR>
+    <P ><a href="sigin.html" STYLE="color: WHITE;margin-left:300px;text-decoration: none;">Create an account</a></P>
+</body>
+</html>

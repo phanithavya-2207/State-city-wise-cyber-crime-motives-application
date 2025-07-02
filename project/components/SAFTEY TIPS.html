@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            display: flex;
+            background-color: white;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: xx-large;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card {
+            height: 150px;
+            width: 350px;
+            margin: 30px;
+            box-shadow: 5px 5px 20px black;
+            overflow: hidden;
+            position: relative;
+        }
+
+        img {
+            height: 150px;
+            width: 100%;
+            border-radius: 3px;
+        }
+
+        .intro {
+            height: 90px;
+            width: 100%;
+            padding: 2px;
+            box-sizing: border-box;
+            position: absolute;
+            bottom: 0;
+            color: white;
+            transition: .5s;
+            background: rgba(0, 0, 0, 0.7);
+            overflow: hidden;
+        }
+
+        h2 {
+            margin: 10px;
+            font-size: 20px;
+        }
+
+        p {
+            font-size: 14px;
+            margin: 10px;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s, opacity 0.5s linear;
+        }
+
+        .card:hover {
+            cursor: pointer;
+        }
+
+        .card:hover .intro {
+            height: 100%;
+            bottom: 0;
+        }
+
+        .card:hover p {
+            opacity: 1;
+            visibility: visible;
+        }
+        .dropbtn {
+  background-color: #0481aa;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  align-items: center;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  padding:5px;
+  align-items: center;
+}
+
+.dropdown-content {
+  display: none;
+  position: relative;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e6a8e;}
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align:center;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: absolute;
+  margin-left: 100px;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right:0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: relative;
+  top: 0;
+  padding-left:20px;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color:#0481aa;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #3e6a8e;
+}
+
+.active {
+  background-color:#3e6a8e ;
+}
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+h1 {
+      color: #333;
+      text-align: center;
+      margin-bottom: 30px;
+      cursor: pointer;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+        
+    </style>
+</head>
+<body>
+  <center><table >
+    <td><img src="../assets/cyber crime.png" style="height:100px;width:100px"></td>
+    <td><h1 style="font-size:xx-large"><b>State/City Wise Cyber Crime Motives</b></h1><br></td>
+    </table></center>
+    <ul>
+     <li><a href="home.html">Home</a></li>
+     <li><a  href="abut us.html">About </a></li>
+     <li><a href="Resources.html">Resources</a></li>
+     <li><a class="active" href="SAFTEY TIPS.html">Safety tips</a></li>
+     <li><a href="FAQ.html">FAQ</a></li>
+     <li><a href="Helpline.html">Helpline</a></li>
+     <li style="float: right;"><a href="login.html">Logout</a></li>
+    
+     <li style="float: right;"><a href="sigin.html">Sign Up</a></li>
+    </ul>
+    <div class="container">
+        <table>
+            <tr>
+                <td>
+                    <div class="card">
+                        <img src="../assets/saftey_tips.jpg">
+                        <div class="intro">
+                            <h2>Safety Tip 1</h2>
+                            <p>Use Strong Passwords: Create complex passwords with a combination of uppercase and lowercase letters, numbers, and symbols. Avoid using easily guessable information, such as your name or birthdate. Use unique passwords for different accounts.</p>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="card">
+                        <img src="../assets/saftey_tips.jpg">
+                        <div class="intro">
+                            <h2>Safety Tip 2</h2>
+                            <p>Enable Two-Factor Authentication (2FA): Enable 2FA whenever possible to add an extra layer of security to your accounts. This typically involves receiving a code on your mobile device that you need to enter in addition to your password.</p>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="card">
+                        <img src="../assets/saftey_tips.jpg">
+                        <div class="intro">
+                            <h2>Safety Tip 3</h2>
+                            <p>Keep Software Updated: Regularly update your operating system, antivirus software, and other applications to patch security vulnerabilities.</p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="card">
+                        <img src="../assets/saftey_tips.jpg">
+                        <div class="intro">
+                            <h2>Safety Tip 4</h2>
+                            <p>Be Wary of Phishing Attempts: Avoid clicking on links or downloading attachments from unknown or suspicious emails. Verify the legitimacy of emails or messages by contacting the sender through a trusted method before taking any action.</p>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="card">
+                        <img src="../assets/saftey_tips.jpg">
+                        <div class="intro">
+                            <h2>Safety Tip 5</h2>
+                            <p>Secure Your Wi-Fi Network: Set a strong password for your Wi-Fi network to prevent unauthorized access. Use WPA3 encryption if available for enhanced security.</p>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="card">
+                        <img src="../assets/saftey_tips.jpg">
+                        <div class="intro">
+                            <h2>Safety Tip 6</h2>
+                            <p>Use Secure Websites: Look for "https://" in the URL and a padlock icon in the address bar when entering personal or financial information online. Avoid using public computers or unsecured networks for sensitive transactions.</p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="card">
+                        <img src="../assets/saftey_tips.jpg">
+                        <div class="intro">
+                            <h2>Safety Tip 7</h2>
+                            <p>Monitor Your Financial Statements: Regularly review your bank and credit card statements for any unauthorized transactions. Report any suspicious activity to your financial institution immediately.</p>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="card">
+                        <img src="../assets/saftey_tips.jpg">
+                        <div class="intro">
+                            <h2>Safety Tip 8</h2>
+                            <p>Backup Your Data: Regularly backup important data to an external drive or a secure cloud service. In case of ransomware attacks, having a backup can prevent data loss.</p>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="card">
+                        <img src="../assets/saftey_tips.jpg">
+                        <div class="intro">
+                            <h2>Safety Tip 9</h2>
+                            <p>Educate Yourself: Stay informed about the latest cybersecurity threats and best practices. Be cautious about sharing personal information on social media platforms.</p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

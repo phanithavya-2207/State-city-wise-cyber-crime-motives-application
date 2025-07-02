@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            background-color: white;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: xx-large;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card {
+            height: 150px;
+            width: 350px;
+            margin: 30px;
+            box-shadow: 5px 5px 20px black;
+            overflow: hidden;
+            position: relative;
+        }
+
+        img {
+            height: 200px;
+            width: 100%;
+            border-radius: 3px;
+        }
+
+        .intro {
+            height: 90px;
+            width: 100%;
+            padding: 2px;
+            box-sizing: border-box;
+            position: absolute;
+            bottom: 0;
+            color: white;
+            transition: .5s;
+            background: rgba(0, 0, 0, 0.7);
+            overflow: hidden;
+        }
+
+        h2 {
+            margin: 10px;
+            font-size: 20px;
+        }
+
+        p {
+            font-size: 14px;
+            margin: 10px;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s, opacity 0.5s linear;
+        }
+
+        .card:hover {
+            cursor: pointer;
+        }
+
+        .card:hover .intro {
+            height: 100%;
+            bottom: 0;
+        }
+
+        .card:hover p {
+            opacity: 1;
+            visibility: visible;
+        }
+        .dropbtn {
+  background-color: #0481aa;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  align-items: center;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  padding:5px;
+  align-items: center;
+}
+
+.dropdown-content {
+  display: none;
+  position: relative;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e6a8e;}
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align:center;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: absolute;
+  margin-left: 100px;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right:0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: relative;
+  top: 0;
+  padding-left:20px;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color:#0481aa;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #3e6a8e;
+}
+
+.active {
+  background-color:#3e6a8e ;
+}
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+h1 {
+      color: #333;
+      text-align: center;
+      margin-bottom: 30px;
+      cursor: pointer;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+        
+    </style>
+</head>
+<body>
+  <center><table >
+    <td><img src="../assets/cyber crime.png" style="height:100px;width:100px"></td>
+    <td><h1 style="font-size:xx-large"><b>State/City Wise Cyber Crime Motives</b></h1><br></td>
+    </table></center>
+    <ul>
+     <li><a href="home.html">Home</a></li>
+     <li><a  href="abut us.html">About </a></li>
+     <li><a  class="active" href="Resources.html">Resources</a></li>
+     <li><a href="SAFTEY TIPS.html">Safety tips</a></li>
+     <li><a href="FAQ.html">FAQ</a></li>
+     <li><a href="Helpline.html">Helpline</a></li>
+     <li style="float: right;"><a href="login.html">Logout</a></li>
+    
+     <li style="float: right;"><a href="sigin.html">Sign Up</a></li>
+    </ul>
+    <div class="container">
+        <table>
+            <tr>
+                <td>
+                    <div class="card">
+                        <img src="../assets/resources.avif">
+                        <div class="intro">
+                            <a href="http://localhost/project/cybercrime.php" style="text-decoration: none;" ><h2 style="color:white">CRIME</h2></a>
+                            <p>The table consists of crimes and their description</p>
+
+                           
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="card">
+                        <img src="../assets/resources.avif">
+                        <div class="intro">
+                            <a href="http://localhost/project/investigator.php" style="text-decoration: none;" ><h2 style="color:white">INVESTIGATOR</h2></a>
+                            <p>The table consist information about officials to contact</p>
+                        </div>
+                    </div>
+                   
+                </td>
+                <td>
+                    <div class="card">
+                        <img src="../assets/resources.avif">
+                        <div class="intro">
+                            <a href="http://localhost/project/VICTIM.php" style="text-decoration: none;" ><h2 style="color:white">VICTIM</h2></a>
+                            <p>The table contains details of victims and their information.</p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    
+                    
+                </td>
+                <td>
+                    
+                </td>
+                <td>
+                   
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="card">
+                        <img src="../assets/resources.avif">
+                        <div class="intro">
+                            
+                           <a href="http://localhost/project/case.php" style="text-decoration: none;" ><h2 style="color:white">CASE</h2></a>
+                           <p>The table consists of committed crimes by the accused and their motives</p>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="card">
+                        <img src="../assets/resources.avif">
+                        <div class="intro">
+                            <a href="http://localhost/project/statistics.php" style="text-decoration: none;" ><h2 style="color:white">STATISTICS</h2></a>
+                            <p>Statistics of crime happened in metropolitan cities are available in this table according to the year.</p>
+                        </div>
+                    </div>
+                    
+                </td>
+                <td>
+                    <div class="card">
+                        <img src="../assets/resources.avif">
+                        <div class="intro">
+                            <a href="http://localhost/project/accused.php" style="text-decoration: none;" ><h2 style="color:white">ACCUSED</h2></a>
+                            <p>Accused with their details are available in this table.</p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
