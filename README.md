@@ -8,7 +8,6 @@
 
 > Includes: an Entity-Relationship (ER) diagram, relational schema, module breakdowns, and data structure definitions used in the database design.
 
-ures.
 
 ---
 
