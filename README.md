@@ -4,9 +4,11 @@
 
 ## 📘 Project Report
 
-📄 [Click here to view the project report (PDF)](.project/CyberCrime_CaseStudy.pdf)
+📄 [Click here to view the project report (PDF)](./project/CyberCrime_CaseStudy.pdf)
 
-> Includes ER diagram, schema, module descriptions, and data structures.
+> Includes: an Entity-Relationship (ER) diagram, relational schema, module breakdowns, and data structure definitions used in the database design.
+
+ures.
 
 ---
 
