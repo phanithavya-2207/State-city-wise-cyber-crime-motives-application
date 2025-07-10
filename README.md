@@ -1,5 +1,15 @@
 # State-city-wise-cyber-crime-motives-application
 
+---
+
+## 📘 Project Report
+
+📄 [Click here to view the project report (PDF)](.project/CyberCrime_CaseStudy.pdf)
+
+> Includes ER diagram, schema, module descriptions, and data structures.
+
+---
+
 ## 📦 Setup Instructions
 
 ### 1. Clone the Repository
